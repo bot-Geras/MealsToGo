@@ -1,16 +1,17 @@
 import { styled } from "styled-components/native";
-
-
+import { Card } from "react-native-paper";
+import { View, StyleSheet, Image } from "react-native";
 
 
 export const RestaurantCard = styled(Card)`
   background-color: ${(props) => props.theme.colors.bg.primary};
+ 
 `;
 export const CardCover = styled(Card.Cover)`
   padding: ${(props) => props.theme.space[3]};
   background-color: ${(props) => props.theme.colors.bg.primary};
 `;
-export const Address = styled(Text)`
+export const Address = styled.Text`
   font-family: ${(props) => props.theme.fonts.body};
   font-size: ${(props) => props.theme.fontSizes.caption};
 `;
