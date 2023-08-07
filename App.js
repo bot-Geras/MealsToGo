@@ -12,11 +12,11 @@ import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { SafeArea } from "./src/components/utils/safe-area.component";
-import { Ionicons, Entypo } from "@expo/vector-icons";
+import { Ionicons} from "@expo/vector-icons";
 const Tab = createBottomTabNavigator();
 const TAB_ICON = {
-  Restaurants: "ios-restaurant",
-  Maps: "ios-map",
+  Restaurants: "restaurant-sharp",
+  Maps: "map",
   Settings: "settings",
 };
 const SettingScreen = () => {
