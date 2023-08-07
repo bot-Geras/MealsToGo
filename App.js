@@ -50,7 +50,7 @@ const createScreenOptions = ({ route }) => {
     ],
   };
 };
-import { restaurantsRequest } from "./src/services/restaurants/restaurants.service";
+
 export default function App() {
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
