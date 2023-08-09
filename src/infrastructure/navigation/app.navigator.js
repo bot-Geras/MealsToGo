@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import { Ionicons } from "@expo/vector-icons";
 import { RestaurantNavigator } from './restaurant.navigator';
+import { MapScreen } from '../../features/map/screens/map.screen';
 const Tab = createBottomTabNavigator();
 const TAB_ICON = {
     Restaurants: "restaurant-sharp",
@@ -18,13 +19,7 @@ const TAB_ICON = {
       </SafeArea>
     );
   };
-  const MapScreen = () => {
-    return (
-      <SafeArea>
-        <Text>hi</Text>
-      </SafeArea>
-    );
-  };
+ 
   
   const createScreenOptions = ({ route }) => {
     const iconName = TAB_ICON[route.name];
