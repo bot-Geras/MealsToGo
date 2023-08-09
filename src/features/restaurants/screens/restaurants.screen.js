@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { FlatList, TouchableOpacity} from "react-native";
+import { FlatList, TouchableOpacity } from "react-native";
 
 import { RestaurantInfoCard } from "../components/restaurants-info-card.component";
 import { styled } from "styled-components/native";
@@ -9,7 +9,6 @@ import { RestaurantsContext } from "../../../services/restaurants/restaurants.co
 import { ActivityIndicator, MD2Colors } from "react-native-paper";
 import { View } from "react-native-web";
 import { Search } from "../components/search.component";
-
 
 const RestaurantList = styled(FlatList).attrs({
   contentContainerStyle: {
@@ -24,7 +23,7 @@ const LoadingContainer = styled.View`
   top: 50%;
   left: 50%;
 `;
-export const RestaurantsScreen = ({navigation}) => {
+export const RestaurantsScreen = ({ navigation }) => {
   const { restaurants, isLoading, error } = useContext(RestaurantsContext);
   // console.log(navigation);
   return (
@@ -39,7 +38,11 @@ export const RestaurantsScreen = ({navigation}) => {
         data={restaurants}
         renderItem={({ item }) => {
           return (
-            <TouchableOpacity onPress={() => navigation.navigate('RestaurantDetail')}>
+            <TouchableOpacity
+              onPress={() =>
+                navigation.navigate("RestaurantDetail", { restaurant: item })
+              }
+            >
               <Spacer position={"bottom"} size={"large"}>
                 <RestaurantInfoCard restaurant={item} />
               </Spacer>
