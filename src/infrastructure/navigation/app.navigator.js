@@ -2,8 +2,9 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { RestaurantsScreen } from '../../features/restaurants/screens/restaurants.screen';
+
 import { Ionicons } from "@expo/vector-icons";
+import { RestaurantNavigator } from './restaurant.navigator';
 const Tab = createBottomTabNavigator();
 const TAB_ICON = {
     Restaurants: "restaurant-sharp",
@@ -31,7 +32,7 @@ const TAB_ICON = {
       tabBarIcon: ({ size, color }) => (
         <Ionicons name={iconName} size={size} color={color} />
       ),
-  
+        headerShown: false,
       tabBarActiveTintColor: "tomato",
       tabBarInactiveTintColor: "gray",
       tabBarStyle: [
@@ -44,9 +45,9 @@ const TAB_ICON = {
   };
 export const AppNavigator = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer >
               <Tab.Navigator screenOptions={createScreenOptions}>
-                <Tab.Screen name="Restaurant" component={RestaurantsScreen} />
+                <Tab.Screen name="Restaurant" component={RestaurantNavigator} />
                 <Tab.Screen name="Map" component={MapScreen} />
                 <Tab.Screen name="Settings" component={SettingScreen} />
               </Tab.Navigator>
