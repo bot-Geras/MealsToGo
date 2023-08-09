@@ -1,3 +1,4 @@
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import React from "react";
 import { ThemeProvider } from "styled-components/native";
@@ -26,11 +27,13 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
+        <GestureHandlerRootView style={{flex: 1}}>
         <LocationContextProvider>
           <RestaurantsContextProvider>
             <Navigation />
           </RestaurantsContextProvider>
         </LocationContextProvider>
+        </GestureHandlerRootView>
       </ThemeProvider>
 
       <ExpoStatusBar style="auto" />
