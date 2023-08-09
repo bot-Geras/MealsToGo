@@ -1,12 +1,18 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React, {} from 'react'
-import MapView from 'react-native-maps';
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import MapView from "react-native-maps";
+import { styled } from "styled-components/native";
+import { Search } from "../components/search.component";
+const Map = styled(MapView)`
+  width: 100%;
+  height: 100%;
+`;
+
 export const MapScreen = () => {
   return (
-   <>
-    <MapView style={{width: '100%',
-    height: '100%',}}/>
-   </>
-  )
-}
-
+    <>
+      <Search />
+      <Map />
+    </>
+  );
+};
