@@ -11,6 +11,7 @@ import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { LocationContextProvider } from "./src/services/location/location.context";
 import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
 import { Navigation } from "./src/infrastructure/navigation";
+import { FavouritesContextProvider } from "./src/services/favourites/favourites.context";
 
 export default function App() {
   const [oswaldLoaded] = useOswald({
@@ -28,11 +29,13 @@ export default function App() {
     <>
       <ThemeProvider theme={theme}>
         <GestureHandlerRootView style={{flex: 1}}>
+        <FavouritesContextProvider>
         <LocationContextProvider>
           <RestaurantsContextProvider>
             <Navigation />
           </RestaurantsContextProvider>
         </LocationContextProvider>
+        </FavouritesContextProvider>
         </GestureHandlerRootView>
       </ThemeProvider>
 
